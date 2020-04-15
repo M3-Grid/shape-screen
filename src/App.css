@@ -27,14 +27,40 @@ button {
   padding-left: 0.4rem;
   padding-right: 0.4rem;
   color: antiquewhite;
+  transition-duration: 2.0s;
+  position: relative;
+  -webkit-transition-duration: 2.0s;
+  cursor: pointer;
+  /* overflow: hidden; */
 }
 
 button:enabled:hover {
   background-color: blueviolet;
 }
 
+button:after {
+  background-color: silver;
+  transition: all 2.0s;
+  position: absolute;
+  display: block;
+  padding-top: 200%;
+  padding-left: 250%;
+  margin-top: -120%;
+  margin-left: -50%;
+  content: "";
+  opacity: 0;
+}
+
+button:active:after {
+  transition: 0s;
+  margin: 0;
+  padding: 0;
+  opacity: 1;
+}
+
 button:disabled {
-  background-color: cornflowerblue;
+  background-color: slategrey;
+  opacity: .5;
   color: lightsteelblue;
 }
 
